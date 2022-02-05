@@ -12,6 +12,7 @@ import {MatCardModule} from '@angular/material/card';
 import { MatTableModule} from '@angular/material/table'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MutualfundComponent } from './mutualfund/mutualfund.component';
 
 
 
@@ -21,7 +22,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     CarouselComponent,
     MutualfundsComponent,
     InvestmentsComponent,
-    HomeComponent
+    HomeComponent,
+    MutualfundComponent
     
   ],
   imports: [

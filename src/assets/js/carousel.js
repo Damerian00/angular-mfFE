@@ -8,8 +8,11 @@
 initCarousel();
 
 function initCarousel() {
+  if(items.length == 0 || items == undefined){
+  }else{
       setInitialClasses();
       setEventListeners();
+  }
       // Set moving to false so that the carousel becomes interactive
       moving = false;
     }    
@@ -19,11 +22,12 @@ function setInitialClasses() {
   // Targets the previous, current, and next items
   // This assumes there are at least three items.
   // stops the error when not on  the page with the carousel
-  if(items != undefined){
+  
     items[totalItems - 1].classList.add("prev");
     items[0].classList.add("active");
     items[1].classList.add("next");
-  }
+
+  
 }
 // Set event listeners
 function setEventListeners() {
