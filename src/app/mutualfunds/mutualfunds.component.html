@@ -54,14 +54,17 @@
   <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>
 <section class="btn-container">
-  <button class="addFund">Add Mutual Fund</button>
+  <button (click)="toggleModal()" class="addFund">{{toggleModalButton}}</button>
 </section>
-<aside class="addmf-modal">
+<aside [ngClass]="{'modal': true, 'move-modal' :moveClass}" class="addmf-modal">
   <h3>Add a new Mutual Fund</h3>
   <form [formGroup]="mfForm" (ngSubmit)="submit(mfForm, mfName)" >
-    <label>Fund Name</label>
-    <input type="text" required minlength="1" maxlength="6" [(ngModel)] ="mfName" name="mfName" [ngModelOptions]="{standalone: true}"/>
-    <div *ngIf = "notValid" class="validation">Must input a name for the mutual fund!</div>
+    <div class="fund_name">
+      <label>Fund Name</label>
+      <input type="text" required minlength="1" maxlength="6" [(ngModel)] ="mfName" name="mfName" [ngModelOptions]="{standalone: true}"/>
+      <div *ngIf = "notValid" class="validation">Must input a name for the mutual fund!</div>
+    </div>
+    <div class="box-container">
     <div class="cdBox">
       <label>Select CD's to Add</label>
       <section class="cd-checkbox-container" *ngFor="let cd of importedCDs">
@@ -78,6 +81,7 @@
         <input type="checkbox" name="data-stk" [value]="stk.symbol" (change)="onChecked($event)" />
         {{ stk.symbol }}
       </section>
+    </div>
     </div>
     <button class="btn btn-primary" type="submit" >Submit</button>
 

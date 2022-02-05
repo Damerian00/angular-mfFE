@@ -6,15 +6,21 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MfService {
-mfUrl: string = "https://mfmicroserve.herokuapp.com/mutualfunds"
+mfUrl: string = "https://mfmicroserve.herokuapp.com/mutualfunds/"
   constructor(private http:HttpClient) { }
     
     getMFs(): Observable<any> {
       return this.http.get(this.mfUrl);
     } 
-   
+   getMF(id:number): Observable<any>{
+     return this.http.get(this.mfUrl+id)
+   }
     addMF(body: {}): Observable<any> {
       return this.http.post(this.mfUrl, body)
+    }
+
+    deleteMF(id: number): Observable<any>{
+      return this.http.delete(this.mfUrl+id);
     }
 
 }

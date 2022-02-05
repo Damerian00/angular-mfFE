@@ -113,11 +113,26 @@ mfName: string = "";
       console.log('this is the forms value',this.mfForm.value);
       console.log('this is the cds', cds);
       console.log('this is the stoks', stocks)
+      this.toggleModal();
     }
 
 
   }
+  toggleModalButton = "Add Mutual Fund";
+  moveClass: boolean = false;
+  toggleModal(): void{
+    if (this.moveClass == false){
+      this.moveClass = true;
+      this.toggleModalButton = "Close Modal";
+    } else {
+      this.moveClass = false;
+      this.toggleModalButton = "Add Mutual Fund";
+    }
+  }
+  removeMF(id: any){
 
+
+  }
 
 
 }
