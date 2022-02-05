@@ -1,0 +1,39 @@
+.mf{
+  text-align: center;
+  font-family: monospace;
+  margin-top:2vh;
+  font-size: 3rem;
+}
+table {
+    width: 90vw;
+    margin: 10vh auto;
+    }
+    h4{
+      color:rgb(1, 124, 240);
+      margin-top:5px;
+  
+    }
+    .center {
+      padding-left:8px
+    }
+    p{
+  
+      span{
+        margin: 2px;
+      }
+    }
+    .stocks-container, .cds-container{
+      display: flex;
+      align-items: center;
+      margin: 0;
+    }
+    .stocks-container span, .cds-container span{
+      background-color: blue;
+      color:whitesmoke;
+      padding: .25rem;
+      border-radius: 15px;;
+    }
+    .validation{
+      color:red;
+      font-style: italic;
+    }

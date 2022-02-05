@@ -1,0 +1,29 @@
+.container{ height: 30vh; width: 100vw}
+.left p, .right p{text-align: center;}
+.left{
+    display:flex;
+    align-items: center;
+    
+    img{
+        order:1;
+       
+    }
+    p{
+        order:2;
+        flex:3;
+
+    }
+}
+
+.right{
+    display:flex;
+    align-items: center;
+    img{
+        order:2;
+        
+    }
+    p{
+        order:1;
+        flex:3
+    }
+}
