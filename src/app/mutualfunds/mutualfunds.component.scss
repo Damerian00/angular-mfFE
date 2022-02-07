@@ -1,3 +1,20 @@
+$bluePrim: rgb(1, 124, 240);
+
+
+button{
+      
+  color: rgb(255, 255, 255); font-size: 16px; line-height: 16px; padding: 5px; border-radius: 10px; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; background-image: linear-gradient(to right, $bluePrim 0%, rgb(71, 199, 238) 50%, $bluePrim 100%); box-shadow: rgb(0, 0, 0) 5px 4px 15px 2px; border: 2px solid rgb(28, 110, 164); display: inline-block; margin:0 .25rem;
+ 
+}
+button:hover{
+  background: $bluePrim;
+  
+}
+button:active {
+background: $bluePrim; }
+button:hover{
+  cursor: pointer;
+}
 .mf{
   text-align: center;
   font-family: monospace;
@@ -7,9 +24,20 @@
 table {
     width: 90vw;
     margin: 10vh auto;
+    font-family: monospace;
+    button{
+      
+        margin:0 1rem;
+       
+    }
+    button:hover{
+        background: $bluePrim;
+        
+      }
+
     }
     h4{
-      color:rgb(1, 124, 240);
+      color:$bluePrim;
       margin-top:5px;
   
     }
@@ -37,8 +65,11 @@ table {
       color:red;
       font-style: italic;
     }
+  
 .btn-container{
-  height:30vh
+  height:30vh;
+
+
 }
     .modal{
       width: calc(100%/3);
@@ -52,27 +83,33 @@ table {
       transform: translate(-70vw, 20vh);
       
       transition: transform 325ms ease-out;
-  }
-  .move-modal{
-      transform: translateY(7vh);
-      transition: transform 325ms ease-in;
-  
-  } 
+      
+      
+    }
   
   .addmf-modal {
       padding:3rem;
       display: flex;
       flex-direction: column;
-
-      h3{
-        text-align: center;
-        font-family: fantasy;
-        font-size: 2rem;
-        text-shadow: rgba(0, 132, 255, 1) 2px 2px 0px, rgba(20, 20, 20, 1) 4px 4px 0px, 2px 2px 2px rgba(255, 255, 255, .95);
-        color: white;
-        margin-bottom:2rem;
-      }
+       opacity: 0;
+    }
+    .move-modal{
+      transform: translateY(7vh);
+      transition: transform 325ms ease-in;
+      transition: opacity;
+      opacity: 1;
+      transition-duration: 1s;
+      transition-timing-function: linear;
+  
   }
+    .addmf-modal h3{
+      text-align: center;
+      font-family: fantasy;
+      font-size: 2rem;
+      text-shadow: rgba(0, 132, 255, 1) 2px 2px 0px, rgba(20, 20, 20, 1) 4px 4px 0px, 2px 2px 2px rgba(255, 255, 255, .95);
+      color: white;
+      margin-bottom:2rem;
+    }
 
   form{
     background-color: rgba(255, 255, 255, .95);
@@ -81,7 +118,17 @@ table {
     flex-direction: column;
     align-items: center;
     padding: 2rem;
-    
+    label{
+      
+      font-size:1rem;
+      font-family: fantasy;
+    }
+    .fund_name{
+      display: flex;
+      width:100%;
+      align-items: center;
+      justify-content: space-evenly;
+    }
       .box-container{
       display: flex;
       margin:1rem; 
@@ -89,4 +136,11 @@ table {
       justify-content: space-evenly;
       
     }
+    .cdBox, .stockBox{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+
+    }
+
   }
