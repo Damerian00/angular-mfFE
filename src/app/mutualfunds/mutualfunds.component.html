@@ -4,7 +4,7 @@
     <th mat-header-cell *matHeaderCellDef>Mutual Funds</th>
     <td mat-cell *matCellDef="let mf">
       <button [routerLink]="['/mutualfunds', mf.id]"><fa-icon [icon]="faEdit"></fa-icon></button>
-      <button><fa-icon [icon]="faTrash"></fa-icon></button>
+      <button (click)="removeMF(mf.id)"><fa-icon [icon]="faTrash"></fa-icon></button>
  {{ mf.fund_name }}
     </td>
     

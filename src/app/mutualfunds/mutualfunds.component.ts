@@ -5,6 +5,7 @@ import { faTrashAlt, faEdit  } from '@fortawesome/free-regular-svg-icons';
 
 
 export interface MFElement {
+  id: number;
   fund_name: string;
   cds: Array<Object>;
   stocks: Array<Object>;
@@ -130,7 +131,7 @@ mfName: string = "";
     }
   }
   removeMF(id: any){
-
+    console.log(id);
 
   }
 
