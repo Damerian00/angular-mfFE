@@ -1,142 +1,136 @@
 $bluePrim: rgb(1, 124, 240);
 
-
-button{
-      
-  color: rgb(255, 255, 255); font-size: 16px; line-height: 16px; padding: 5px; border-radius: 10px; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; background-image: linear-gradient(to right, $bluePrim 0%, rgb(71, 199, 238) 50%, $bluePrim 100%); box-shadow: rgb(0, 0, 0) 5px 4px 15px 2px; border: 2px solid rgb(28, 110, 164); display: inline-block; margin:0 .25rem;
- 
+button {
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  line-height: 16px;
+  padding: 5px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  background-image: linear-gradient(
+    to right,
+    $bluePrim 0%,
+    rgb(71, 199, 238) 50%,
+    $bluePrim 100%
+  );
+  box-shadow: rgb(0, 0, 0) 5px 4px 15px 2px;
+  border: 2px solid rgb(28, 110, 164);
+  display: inline-block;
+  margin: 0 0.25rem;
 }
-button:hover{
+button:hover {
   background: $bluePrim;
-  
 }
 button:active {
-background: $bluePrim; }
-button:hover{
+  background: $bluePrim;
+}
+button:hover {
   cursor: pointer;
 }
-.mf{
-  text-align: center;
-  font-family: monospace;
-  margin-top:2vh;
-  font-size: 3rem;
-}
-.bgColor{
-   
-}
-table {
-    width: 90vw;
-    margin: 10vh auto;
-    font-family: monospace;
-    button{
-      
-        margin:0 1rem;
-       
-    }
-    button:hover{
-        background: $bluePrim;
-        
-      }
 
-    }
-    h4{
-      color:$bluePrim;
-      margin-top:5px;
-  
-    }
-    .center {
-      padding-left:8px
-    }
-    p{
-  
-      span{
-        margin: 2px;
-      }
-    }
-    .stocks-container, .cds-container{
-      display: flex;
-      align-items: center;
-      margin: 0;
-    }
-    .stocks-container span, .cds-container span{
-      background-color: rgba(0, 132, 255, 1);
-      color:whitesmoke;
-      padding: .25rem;
-      border-radius: 15px;;
-    }
-    .validation{
-      color:red;
-      font-style: italic;
-    }
-  
-.btn-container{
-  height:30vh;
-
-
+h4 {
+  color: $bluePrim;
+  margin-top: 5px;
 }
-.bgColor{
-    background-color: rgba(0, 132, 255, 1);
-    height: 90vh;
+.center {
+  padding-left: 8px;
 }
-  
-  .addmf-modal {
-      padding:3rem;
-      display: flex;
-      flex-direction: column;
-      background-color: rgba(0, 132, 255, .70); 
-   
-    }
-    .move-modal{
-      transform: translateY(7vh);
-      transition: transform 325ms ease-in;
-      transition: opacity;
-      opacity: 1;
-      transition-duration: 1s;
-      transition-timing-function: linear;
-  
+p {
+  span {
+    margin: 2px;
   }
-    .addmf-modal h3{
-      text-align: center;
-      font-family: fantasy;
-      font-size: 2rem;
-      text-shadow: rgba(0, 132, 255, 1) 2px 2px 0px, rgba(20, 20, 20, 1) 4px 4px 0px, 2px 2px 2px rgba(255, 255, 255, .95);
-      color: white;
-      margin-bottom:2rem;
-    }
+}
+.stocks-container,
+.cds-container {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+.stocks-container span,
+.cds-container span {
+  background-color: rgba(0, 132, 255, 1);
+  color: whitesmoke;
+  padding: 0.25rem;
+  border-radius: 15px;
+}
+.validation {
+  color: red;
+  font-style: italic;
+}
 
-  form{
-    background-color: rgba(255, 255, 255, .95);
-    border-radius: 25px;
+.btn-container {
+  height: 30vh;
+}
+.bgColor {
+  background-color: rgba(0, 132, 255, 1);
+  height: 90vh;
+}
+
+.addmf-modal {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 132, 255, 0.7);
+  hr{
+      width:100%;
+      margin-bottom: 2rem;
+  }
+}
+.move-modal {
+  transform: translateY(7vh);
+  transition: transform 325ms ease-in;
+  transition: opacity;
+  opacity: 1;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+}
+.addmf-modal h3 {
+  text-align: center;
+  font-family: fantasy;
+  font-size: 2rem;
+  text-shadow: rgba(0, 132, 255, 1) 2px 2px 0px, rgba(20, 20, 20, 1) 4px 4px 0px,
+    2px 2px 2px rgba(255, 255, 255, 0.95);
+  color: white;
+  margin-bottom: 2rem;
+}
+.display {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+form {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  label {
+    font-size: 1rem;
+    font-family: fantasy;
+  }
+  .fund_name {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .box-container {
+    display: flex;
+    margin: 1rem;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  .cdBox,
+  .stockBox {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 2rem;
-    label{
-      
-      font-size:1rem;
-      font-family: fantasy;
-    }
-    .fund_name{
-      display: flex;
-      width:100%;
-      align-items: center;
-      justify-content: space-evenly;
-    }
-      .box-container{
-      display: flex;
-      margin:1rem; 
-      width:100%;
-      justify-content: space-evenly;
-      
-    }
-    .cdBox, .stockBox{
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-
-    }
-
+    justify-content: space-around;
   }
-  .stock-checkbox-container{
-    display: flex;
-  }
+}
+.stock-checkbox-container {
+  display: flex;
+}

@@ -152,7 +152,10 @@ mfName: string = "";
   }
   removeMF(id: any){
     console.log(id);
-
+    this.mfService.deleteMF(id).subscribe((data)=>{
+      console.log(data);
+    })
+    this.ngOnInit();
   }
 
 
