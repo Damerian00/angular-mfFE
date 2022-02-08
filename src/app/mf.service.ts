@@ -32,7 +32,9 @@ investUrl: string = "https://mfmicroserve.herokuapp.com/investments/"
     deleteMF(id: number): Observable<any>{
        return this.http.delete(this.mfUrl+id, {responseType: "text"});
     }
-
+    deleteInvest(id: number): Observable<any>{
+      return this.http.delete(this.investUrl+id, {responseType: "text"});
+    }
 
 
 

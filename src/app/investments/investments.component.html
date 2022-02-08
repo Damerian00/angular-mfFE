@@ -7,20 +7,23 @@
             <p class="invAmt">Investment Amount: {{invest.investAmount | currency}}</p>
             <p class="invPer">APR: {{invest.percentage | percent}}</p>
             <p class="invRtn">Avg Return: {{invest.return | currency}}</p>
+            <button (click)="removeInvest(invest.id)"><fa-icon [icon]="faTrash"></fa-icon></button>
             </div>
          </div>
         </section>
     
 </main>
 <aside class="buttonContainer">
-   Amount to Invest: <input [(ngModel)]= "investData.investAmount" type="number"/>
-    Annual Percentage Rate: 
+  <label>Amount to Invest: </label> <input [(ngModel)]= "investData.investAmount" type="number"/>
+    <label>Annual Percentage Rate:</label> 
     <input [(ngModel)]= "investData.percentage" type="number"/>
-    Average Annual Return: 
+    <label>Average Annual Return:</label> 
     <input [(ngModel)]= "investData.return" type="number"/>
-   WHich Mutual fund  is this for: <select name="mfs" [(ngModel)]="investData.MutualFundId">
-    <option [ngValue] = "mfs.id" *ngFor="let mf of mfs">{{mf.fund_name}}</option>
+   <label>Which Mutual fund  is this for: </label>
+   <select name="MutualFundId" [(ngModel)]="investData.MutualFundId">
+    <option [ngValue] = "mf.id" *ngFor="let mf of mfs">{{mf.fund_name}}</option>
 </select>
-   
+
     <button (click) = "addInvestment()">Add Investment</button> 
+
 </aside>

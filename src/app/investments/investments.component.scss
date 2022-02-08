@@ -1,3 +1,5 @@
+$bluePrim: rgb(1, 124, 240);
+
 main{
     display:flex;
     justify-content: center;
@@ -5,6 +7,15 @@ main{
     background-color: rgba(0, 132, 255, 1);
     padding:4rem 2rem;
 }
+button{
+      
+    color: rgb(255, 255, 255); font-size: 16px; line-height: 16px; padding: 5px; border-radius: 10px; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; background-image: linear-gradient(to right, $bluePrim 0%, rgb(71, 199, 238) 50%, $bluePrim 100%); box-shadow: rgb(0, 0, 0) 5px 4px 15px 2px; border: 2px solid rgb(28, 110, 164); display: inline-block; margin:0 .25rem;
+   
+  }
+  button:hover{
+    background: $bluePrim;
+    
+  }
 .investContainer{
     
 }
@@ -26,7 +37,11 @@ main{
     border-radius: 10px;
     margin: 1rem;
     background-color: white;
-    
+    button{
+        display: block;
+        margin: .25rem auto;
+        width: calc(100%/4);
+    }
 }
 
 .invAmt{

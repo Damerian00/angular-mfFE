@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MfService } from '../mf.service';
+import { faTrashAlt, faEdit  } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-investments',
@@ -11,13 +12,14 @@ export class InvestmentsComponent implements OnInit {
   constructor(private mfService: MfService) { }
 mfs:any;
 investments: any;
-mfId: any = [];
+mfId: any;
 investData = ({
-  MutualFundId: 0,
+  MutualFundId: "invest",
   investAmount: 0,
   percentage: 0,
   return: 0
 })
+faTrash = faTrashAlt;
   ngOnInit(): void {
     this.mfService.getMFs().subscribe(payload =>{
       for(let i = 0; i< payload.length; i++){
@@ -48,26 +50,38 @@ investData = ({
 
   }
   addInvestment(){
-    if (this.investData.investAmount <= 0 || this.investData.percentage <=0 || this.investData.return <= 0 || this.investData.MutualFundId <= 0){
+
+    if (this.investData.investAmount <= 0 || this.investData.percentage <=0 || this.investData.return <= 0 || this.investData.MutualFundId == ""){
       alert("need to input name, type, and fee to add")
     } else {
-    let dollarUS = Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: "USD",
-  });
-    let tempAmt = this.investData.investAmount.toString();
-    let othertemp = Number(dollarUS.format(parseFloat(tempAmt)));
-    this.investData.investAmount = othertemp;
+
+    
+   
+    let mf = this.investData.MutualFundId;
+  console.log('this is mf', mf)
+    
+
+    console.log('before changes', this.investData)
+    
+    console.log('this will be the payload',this.investData)
     this.mfService.addInvest(this.investData).subscribe(payload =>{
       console.log('this is investment', payload);
       this.ngOnInit();
     })
 
+  
+
+
   }
+
   }
-
-
-
+removeInvest(id:any){
+  console.log('this is invest id', id);
+  // this.mfService.deleteInvest(id).subscribe((data)=>{
+  //   console.log(data);
+  //   this.ngOnInit();
+  // })
+}
 
 
 }
