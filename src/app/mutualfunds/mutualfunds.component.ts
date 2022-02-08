@@ -48,7 +48,18 @@ importedStocks:any = [
   {id:5, symbol: "GILD" },
   {id:6, symbol: "MHK" },
   {id:7, symbol: "NXPI" },
-  {id:8, symbol: "MAS" }
+  {id:8, symbol: "MAS" },
+  {id:9, symbol: "AMCR" },
+  {id:10, symbol: "CHTR" },
+  {id:11, symbol: "DOV" },
+  {id:12, symbol: "DAL" },
+  {id:13, symbol: "COST" },
+  {id:14, symbol: "AMZN" },
+  {id:15, symbol: "AZO" },
+  {id:16, symbol: "ALK" },
+  {id:17, symbol: "AAP" },
+  {id:18, symbol: "CBOE" },
+  {id:19, symbol: "GLW" }
   
 ]
 mfName: string = "";
@@ -114,6 +125,15 @@ mfName: string = "";
       console.log('this is the forms value',this.mfForm.value);
       console.log('this is the cds', cds);
       console.log('this is the stoks', stocks)
+      let daForm = {
+        fund_name: fund_name,
+        stocks: stocks,
+        cds: cds
+      }
+      this.mfService.addMF(daForm).subscribe(payload => {
+        console.log("payload",payload)
+        this.ngOnInit();
+      })
       this.toggleModal();
     }
 

@@ -1,0 +1,53 @@
+<div class="bgColor">
+<aside class="addmf-modal">
+    <main>
+        <h3>Edit: {{mutualFund.fund_name}}</h3>
+        
+        <section class="stockContainer"> 
+            <p>Current Stocks:</p>        
+            <p *ngFor="let stock of mutualFund.stocks">{{stock}}</p>
+        </section>
+        <section class="cdContiner" >
+            <p>Current CDs:</p>
+            <p *ngFor="let cd of mutualFund.cds">{{cd}}</p>
+        </section>
+        <!-- <section class="investContiner" >
+            <p>Current Investment's Available:</p>
+            <h4 class="center" *ngIf="mutualFund.Investments.length == 0">None</h4>
+            <div *ngIf="mutualFund.Investments.length !=0">
+                <div *ngFor="let invest of mutualFund.Investments">
+                    <p>{{invest.investAmount | currency}}</p>
+                </div>
+            </div>
+        </section> -->
+    </main>
+    <form [formGroup]="mfForm" (ngSubmit)="submit(mfForm, mfName, mutualFund.id)" >
+      <div class="fund_name">
+        <label>Fund Name </label>
+        <input type="text" required minlength="1" maxlength="6" [(ngModel)] ="mfName" name="mfName" [ngModelOptions]="{standalone: true}" placeholder="{{mutualFund.fund_name}}"/>
+    </div>
+    <div *ngIf = "notValid" class="validation">Must input a name for the mutual fund!</div>
+      <div class="box-container">
+      <div class="cdBox">
+        <label>Select CD's to Add</label>
+        <section class="cd-checkbox-container" *ngFor="let cd of importedCDs">
+          <input type="checkbox" name="data-cd" [value]="cd.symbol" (change)="onChecked($event)" />
+          {{ cd.symbol }}
+        </section>
+      </div>
+      <div class="stockBox">
+        <label>Select Stocks's to Add</label>
+        <section
+          class="stock-checkbox-container"
+          
+        ><p *ngFor="let stk of importedStocks"> <input type="checkbox" name="data-stk" [value]="stk.symbol" (change)="onChecked($event)" />
+            {{ stk.symbol }}</p>
+         
+        </section>
+      </div>
+      </div>
+      <button class="btn btn-primary" type="submit" >Update</button>
+</form>
+</aside>
+</div>
+

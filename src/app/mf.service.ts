@@ -18,6 +18,9 @@ mfUrl: string = "https://mfmicroserve.herokuapp.com/mutualfunds/"
     addMF(body: {}): Observable<any> {
       return this.http.post(this.mfUrl, body)
     }
+    editMF(id:number, body:{}): Observable<any>{
+      return this.http.put(this.mfUrl+id,body)
+    }
 
     deleteMF(id: number): Observable<any>{
       return this.http.delete(this.mfUrl+id);
