@@ -1,1 +1,26 @@
-<p>investments works!</p>
+<main>
+        
+        <section class="investContainer" *ngFor="let mf of mfs">
+            <div *ngIf="mf.Investments.length != 0">
+            <p class="mfName" >{{mf.fund_name}}</p>        
+            <div class="investBox" *ngFor="let invest of mf.Investments">
+            <p class="invAmt">Investment Amount: {{invest.investAmount | currency}}</p>
+            <p class="invPer">APR: {{invest.percentage | percent}}</p>
+            <p class="invRtn">Avg Return: {{invest.return | currency}}</p>
+            </div>
+         </div>
+        </section>
+    
+</main>
+<aside class="buttonContainer">
+   Amount to Invest: <input [(ngModel)]= "investData.investAmount" type="number"/>
+    Annual Percentage Rate: 
+    <input [(ngModel)]= "investData.percentage" type="number"/>
+    Average Annual Return: 
+    <input [(ngModel)]= "investData.return" type="number"/>
+   WHich Mutual fund  is this for: <select name="mfs" [(ngModel)]="investData.MutualFundId">
+    <option [ngValue] = "mfs.id" *ngFor="let mf of mfs">{{mf.fund_name}}</option>
+</select>
+   
+    <button (click) = "addInvestment()">Add Investment</button> 
+</aside>

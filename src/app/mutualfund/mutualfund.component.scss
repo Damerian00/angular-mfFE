@@ -108,6 +108,8 @@ form {
   flex-direction: column;
   align-items: center;
   padding: 2rem;
+  width:50vw;
+  margin: 5vh auto;
   label {
     font-size: 1rem;
     font-family: fantasy;
@@ -116,21 +118,25 @@ form {
     display: flex;
     width: 100%;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
   }
   .box-container {
     display: flex;
     margin: 1rem;
     width: 100%;
-    justify-content: space-evenly;
+    justify-content: space-around;
   }
   .cdBox,
   .stockBox {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    flex:1;
+    align-content: center;
   }
 }
 .stock-checkbox-container {
   display: flex;
+  flex-wrap: wrap;
+  
 }

@@ -154,8 +154,8 @@ mfName: string = "";
     console.log(id);
     this.mfService.deleteMF(id).subscribe((data)=>{
       console.log(data);
+      this.ngOnInit();
     })
-    this.ngOnInit();
   }
 
 

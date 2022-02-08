@@ -24,8 +24,8 @@
     </main>
     <form [formGroup]="mfForm" (ngSubmit)="submit(mfForm, mfName, mutualFund.id)" >
       <div class="fund_name">
-        <label>Fund Name </label>
-        <input type="text" required minlength="1" maxlength="6" [(ngModel)] ="mfName" name="mfName" [ngModelOptions]="{standalone: true}" placeholder="{{mutualFund.fund_name}}"/>
+        <pre><label>Fund Name:</label> <input type="text" required minlength="1" maxlength="6" [(ngModel)] ="mfName" name="mfName" [ngModelOptions]="{standalone: true}" placeholder="{{mutualFund.fund_name}}"/></pre>
+        
     </div>
     <div *ngIf = "notValid" class="validation">Must input a name for the mutual fund!</div>
       <div class="box-container">
