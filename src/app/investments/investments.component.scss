@@ -3,18 +3,15 @@ $bluePrim: rgb(1, 124, 240);
 main{
     display:flex;
     justify-content: center;
-    margin-top: 10vh;
+    margin-top: 8vh;
     background-color: rgba(0, 132, 255, 1);
     padding:4rem 2rem;
 }
 button{
-      
     color: rgb(255, 255, 255); font-size: 16px; line-height: 16px; padding: 5px; border-radius: 10px; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; background-image: linear-gradient(to right, $bluePrim 0%, rgb(71, 199, 238) 50%, $bluePrim 100%); box-shadow: rgb(0, 0, 0) 5px 4px 15px 2px; border: 2px solid rgb(28, 110, 164); display: inline-block; margin:0 .25rem;
-   
   }
   button:hover{
     background: $bluePrim;
-    
   }
 .investContainer{
     
@@ -26,7 +23,6 @@ button{
     font-size: 2rem;
     font-family: fantasy;
     text-shadow: rgba(0, 132, 255, 1) 2px 2px 0px, rgb(235, 255, 148) 4px 4px 0px, 2px 2px 2px rgba(255, 255, 255, .95);
-
 }
 
 .investBox{
@@ -43,7 +39,6 @@ button{
         width: calc(100%/4);
     }
 }
-
 .invAmt{
 
 }
@@ -54,4 +49,26 @@ button{
 
 .invRtn{
 
+}
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buttonContainer{
+    display: flex;
+    flex-direction: column;
+    margin-bottom:2vh; 
+    pre{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+}
+.freebutton{
+   margin-left: 2rem;
+}
+.validation{
+    color: red;
+    font-style: italic;
 }

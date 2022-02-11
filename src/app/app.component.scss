@@ -1,5 +1,7 @@
+$bluePrim: rgb(1, 124, 240);
 
 header{
+    color: rgb(255, 255, 255); font-size: 16px; line-height: 16px; padding: 5px; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; background-image: linear-gradient(to right, $bluePrim 0%, rgba(71, 199, 238) 50%, $bluePrim 100%); box-shadow: rgb(0, 0, 0) 5px 4px 15px 2px;
     height: 5vh;
     display: flex;
     nav{
@@ -16,9 +18,9 @@ header{
         }
     }
     .navs a:hover{
-        $bluePrim: rgb(1, 124, 240);
+        
     
-  color: rgb(255, 255, 255); font-size: 16px; line-height: 16px; padding: 5px; border-radius: 10px; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; background-image: linear-gradient(to right, $bluePrim 0%, rgb(71, 199, 238) 50%, $bluePrim 100%); box-shadow: rgb(0, 0, 0) 5px 4px 15px 2px; border: 2px solid rgb(28, 110, 164); display: inline-block; margin:0 .25rem;
+  color: rgb(255, 255, 255); line-height: 16px; padding: 1rem 10px; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; background-image: linear-gradient(to right, $bluePrim 0%, rgb(71, 199, 238) 50%, $bluePrim 100%); box-shadow: rgb(0, 0, 0) 5px 4px 15px 2px;  margin:0 .25rem;
  
 
     }
@@ -29,9 +31,10 @@ header{
 }
 
 footer {
-    position: fixed;
+    
     bottom:0;
-    height: 5vh; width: 100vw;; background-color: blue;
+    height: 5vh; width: 100vw;
+    color: rgb(255, 255, 255); font-size: 16px; line-height: 16px; padding: 5px; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; background-image: linear-gradient(to right, $bluePrim 0%, rgba(71, 199, 238) 50%, $bluePrim 100%); box-shadow: rgb(0, 0, 0) 5px 4px 15px 2px;
     div{
         
     }

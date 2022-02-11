@@ -59,7 +59,8 @@ importedStocks:any = [
   {id:16, symbol: "ALK" },
   {id:17, symbol: "AAP" },
   {id:18, symbol: "CBOE" },
-  {id:19, symbol: "GLW" }
+  {id:19, symbol: "GLW" },
+  {id:20, symbol: "MMM"}
   
 ]
 mfName: string = "";

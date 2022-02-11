@@ -13,17 +13,22 @@
         </section>
     
 </main>
+<div class="form">
+    <div *ngIf = "notValid" class="validation">
+        <p>You have entered an invalid anmount and/or left a field blank please see below requirements.</p>
+        <p> Investment amount needs to be for a value greater then $1.000.00</p>
+        <p>APR needs to have a value between .99 and .01</p>
+        <p>Return needs to have a value greater then $1000.00</p>
+        <p>You must select a mutual fund for this Investment option.</p>
+         
+    </div>
 <aside class="buttonContainer">
-  <label>Amount to Invest: </label> <input [(ngModel)]= "investData.investAmount" type="number"/>
-    <label>Annual Percentage Rate:</label> 
-    <input [(ngModel)]= "investData.percentage" type="number"/>
-    <label>Average Annual Return:</label> 
-    <input [(ngModel)]= "investData.return" type="number"/>
-   <label>Which Mutual fund  is this for: </label>
-   <select name="MutualFundId" [(ngModel)]="investData.MutualFundId">
+    <pre><label>Amount to Invest: </label> <input [(ngModel)]= "investData.investAmount" type="number"/></pre> 
+    <pre><label>Annual Percentage Rate:</label>  <input [(ngModel)]= "investData.percentage" type="number"/></pre> 
+   <pre><label>Average Annual Return: </label> <input [(ngModel)]= "investData.return" type="number"/></pre>
+  <pre><label>Which Mutual fund  is this for: </label> <select name="MutualFundId" [(ngModel)]="investData.MutualFundId">
     <option [ngValue] = "mf.id" *ngFor="let mf of mfs">{{mf.fund_name}}</option>
-</select>
-
-    <button (click) = "addInvestment()">Add Investment</button> 
-
+</select>  </pre>
 </aside>
+<button class="freebutton" (click) = "addInvestment()">Add Investment</button>
+</div>
