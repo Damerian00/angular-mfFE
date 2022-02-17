@@ -20,13 +20,7 @@ mutualFund: MutualFund= {
   Investments: [],
 };
 mfName: string="";
-importedCDs:any = [
-  {id:1, symbol: "NASDAQ"},
-  {id:2, symbol: "DOW JONES" },
-  {id:3, symbol: "Traditional" },
-  {id:4, symbol: "Equity Linked" },
-  {id:5, symbol: "Industrial Average" }
-]
+importedCDs:any = this.varSend.importedCDs
 importedStocks:any = this.varSend.importedStocks
 mfForm: FormGroup
 notValid: boolean = false;

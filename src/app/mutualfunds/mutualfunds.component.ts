@@ -97,6 +97,7 @@ mfName: string = "";
       
     })
     this.varsend.importedStocks = this.importedStocks;
+    this.varsend.importedCDs = this.importedCDs;
   }
   onChecked(e: any){
     const cdSelections: FormArray = this.mfForm.get('cods') as FormArray;
