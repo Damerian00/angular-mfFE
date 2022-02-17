@@ -3,6 +3,7 @@ import { MfService } from '../mf.service';
 import { ActivatedRoute } from '@angular/router';
 import { MutualFund } from './mf.model';
 import { FormBuilder,FormGroup, Validators, FormArray, FormControl } from '@angular/forms';
+import { VarsenderService } from '../varsender.service';
 
 
 @Component({
@@ -26,32 +27,10 @@ importedCDs:any = [
   {id:4, symbol: "Equity Linked" },
   {id:5, symbol: "Industrial Average" }
 ]
-importedStocks:any = [
-  {id:1, symbol: "NYSE"},
-  {id:2, symbol: "ADBE" },
-  {id:3, symbol: "NVDA" },
-  {id:4, symbol: "MRNA" },
-  {id:5, symbol: "GILD" },
-  {id:6, symbol: "MHK" },
-  {id:7, symbol: "NXPI" },
-  {id:8, symbol: "MAS" },
-  {id:9, symbol: "AMCR" },
-  {id:10, symbol: "CHTR" },
-  {id:11, symbol: "DOV" },
-  {id:12, symbol: "DAL" },
-  {id:13, symbol: "COST" },
-  {id:14, symbol: "AMZN" },
-  {id:15, symbol: "AZO" },
-  {id:16, symbol: "ALK" },
-  {id:17, symbol: "AAP" },
-  {id:18, symbol: "CBOE" },
-  {id:19, symbol: "GLW" },
-  {id:20, symbol: "MMM"}
-  
-]
+importedStocks:any = this.varSend.importedStocks
 mfForm: FormGroup
 notValid: boolean = false;
-  constructor(private route:ActivatedRoute, private mfService: MfService, private fb: FormBuilder) {
+  constructor(private route:ActivatedRoute, private mfService: MfService, private fb: FormBuilder, private varSend: VarsenderService) {
     this.mfForm = this.fb.group({
       cods : this.fb.array([], [Validators.required]),
       stks : this.fb.array([], [Validators.required])
@@ -60,6 +39,7 @@ notValid: boolean = false;
    }
 
   ngOnInit(): void {
+
     this.route.params.subscribe(params=>{
       const myid = +params['id']
       this.mfService.getMF(myid).subscribe(payload=>{

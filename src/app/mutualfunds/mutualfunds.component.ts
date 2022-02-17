@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MfService } from '../mf.service';
 import { FormBuilder,FormGroup, Validators, FormArray, FormControl } from '@angular/forms';
 import { faTrashAlt, faEdit  } from '@fortawesome/free-regular-svg-icons';
+import { VarsenderService } from '../varsender.service';
 
 
 export interface MFElement {
@@ -22,7 +23,7 @@ export interface MFElement {
 export class MutualfundsComponent implements OnInit {
   displayedColumns: string[] = ["fund_name", "cds", "stocks", "investAmount", "percentage", "return" ]
   mfForm: FormGroup
-  constructor(private mfService: MfService, private fb: FormBuilder) {
+  constructor(private mfService: MfService, private fb: FormBuilder, private varsend: VarsenderService) {
     this.mfForm = this.fb.group({
      cods : this.fb.array([], [Validators.required]),
      stks : this.fb.array([], [Validators.required])
@@ -95,6 +96,7 @@ mfName: string = "";
 
       
     })
+    this.varsend.importedStocks = this.importedStocks;
   }
   onChecked(e: any){
     const cdSelections: FormArray = this.mfForm.get('cods') as FormArray;
