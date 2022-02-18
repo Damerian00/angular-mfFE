@@ -1,6 +1,27 @@
 $bluePrim: rgb(1, 124, 240);
 
+.loadBox{
+ width:100vw;
+ height: 80vh;
+}
+.loading{
+  margin-top:5vh;
+  font-size: 1rem;
+  text-align: center;
+  color: black;
+  animation-name: fader;
+  animation-duration: 2.5s; 
+  animation-iteration-count: infinite;
+  animation-duration: alternate;
+}
 
+@keyframes fader {
+0% {opacity: .1; color: $bluePrim;font-size: 1rem;}
+25%{opacity: .75; color: black;}
+50%{opacity: .5; color: $bluePrim; font-size: 2rem;}
+75%{opacity: .25; color: black;}
+100%{opacity: 0; color: $bluePrim;font-size: 3rem;}
+}
 button{
       
   color: rgb(255, 255, 255); font-size: 16px; line-height: 16px; padding: 5px; border-radius: 10px; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; background-image: linear-gradient(to right, $bluePrim 0%, rgb(71, 199, 238) 50%, $bluePrim 100%); box-shadow: rgb(0, 0, 0) 5px 4px 15px 2px; border: 2px solid rgb(28, 110, 164); display: inline-block; margin:0 .25rem;

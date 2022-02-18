@@ -1,5 +1,12 @@
-<main>
-        
+<div *ngIf="loading; then loadingBlock else investBlock"></div>
+    <ng-template #loadingBlock>
+      <div class = "loadBox">  
+      <p class = "loading">Loading please wait...</p>
+        </div>
+    </ng-template>
+
+    <ng-template #investBlock>
+<main>      
         <section class="investContainer" *ngFor="let mf of mfs">
             <div *ngIf="mf.Investments.length != 0">
             <p class="mfName" >{{mf.fund_name}}</p>        
@@ -32,3 +39,4 @@
 </aside>
 <button class="freebutton" (click) = "addInvestment()">Add Investment</button>
 </div>
+</ng-template>

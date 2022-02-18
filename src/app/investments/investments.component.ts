@@ -13,6 +13,7 @@ export class InvestmentsComponent implements OnInit {
 mfs:any;
 investments: any;
 mfId: any;
+loading: boolean = true;
 investData = ({
   MutualFundId: "invest",
   investAmount: 0,
@@ -40,6 +41,7 @@ faTrash = faTrashAlt;
       
       this.mfs = payload;
       this.mfId = payload.id;
+      this.loading = false;
     })
     this.mfService.getInvests().subscribe(payload =>{
       this.investments = payload;
@@ -56,7 +58,6 @@ faTrash = faTrashAlt;
     } else {
       this.notValid = false;
     this.mfService.addInvest(this.investData).subscribe(payload =>{
-      console.log('this is investment', payload);
       this.ngOnInit();
     })
   }

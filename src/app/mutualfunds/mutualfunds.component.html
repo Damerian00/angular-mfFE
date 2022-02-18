@@ -1,4 +1,11 @@
 <h1 class="mf">Mutual Funds</h1>
+<div *ngIf="loading; then loadingBlock else mfBlock"></div>
+    <ng-template #loadingBlock>
+      <div class = "loadBox">  
+      <p class = "loading">Loading please wait...</p>
+        </div>
+    </ng-template>
+<ng-template #mfBlock>
 <table mat-table [dataSource]="mfs" class="mat-elevation-z8">
   <ng-container matColumnDef="fund_name">
     <th mat-header-cell *matHeaderCellDef>Mutual Funds</th>
@@ -88,3 +95,4 @@
 
   </form>
 </aside>
+</ng-template>

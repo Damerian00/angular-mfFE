@@ -1,5 +1,27 @@
 $bluePrim: rgb(1, 124, 240);
 
+.loadBox{
+    width:100vw;
+    height: 80vh;
+   }
+   .loading{
+     margin-top:5vh;
+     font-size: 1rem;
+     text-align: center;
+     color: black;
+     animation-name: fader;
+     animation-duration: 2.5s; 
+     animation-iteration-count: infinite;
+     animation-duration: alternate;
+   }
+   
+   @keyframes fader {
+   0% {opacity: .1; color: $bluePrim;font-size: 1rem;}
+   25%{opacity: .75; color: black;}
+   50%{opacity: .5; color: $bluePrim; font-size: 2rem;}
+   75%{opacity: .25; color: black;}
+   100%{opacity: 0; color: $bluePrim;font-size: 3rem;}
+   }
 main{
     display:flex;
     justify-content: center;

@@ -34,6 +34,7 @@ mfs: any;
 investments: any;
 faTrash = faTrashAlt;
 faEdit = faEdit;
+loading: boolean = true;
 importedCDs:any = [
   {id:1, symbol: "NASDAQ"},
   {id:2, symbol: "DOW JONES" },
@@ -69,7 +70,7 @@ mfName: string = "";
 
   ngOnInit(): void {
     this.mfService.getMFs().subscribe(payload => {
-      console.log('this is the payload:',payload)
+      // console.log('this is the payload:',payload)
       for(let i = 0; i< payload.length; i++){
         let amt: any =[]
         let percent: any = []
@@ -90,9 +91,9 @@ mfName: string = "";
         payload[i]["return"] = ret;
       }
       
-      console.log('this is the new payload:',payload)
+      // console.log('this is the new payload:',payload)
       this.mfs = payload;
-      
+      this.loading = false;
 
       
     })
@@ -117,7 +118,7 @@ mfName: string = "";
   }
 }
   submit(event: any, mfName:any){
-    console.log('this is event',event)
+    // console.log('this is event',event)
     if (mfName == "" || mfName == null){
       this.notValid = true;
     }else {
@@ -125,17 +126,17 @@ mfName: string = "";
       let cds = this.mfForm.value.cods;
       let stocks = this.mfForm.value.stks;
       let fund_name = mfName.toUpperCase()
-      console.log('this is the name',fund_name)
-      console.log('this is the forms value',this.mfForm.value);
-      console.log('this is the cds', cds);
-      console.log('this is the stoks', stocks)
+      // console.log('this is the name',fund_name)
+      // console.log('this is the forms value',this.mfForm.value);
+      // console.log('this is the cds', cds);
+      // console.log('this is the stoks', stocks)
       let daForm = {
         fund_name: fund_name,
         stocks: stocks,
         cds: cds
       }
       this.mfService.addMF(daForm).subscribe(payload => {
-        console.log("payload",payload)
+        // console.log("payload",payload)
         this.ngOnInit();
       })
       this.toggleModal();
@@ -155,9 +156,9 @@ mfName: string = "";
     }
   }
   removeMF(id: any){
-    console.log(id);
+    // console.log(id);
     this.mfService.deleteMF(id).subscribe((data)=>{
-      console.log(data);
+      // console.log(data);
       this.ngOnInit();
     })
   }

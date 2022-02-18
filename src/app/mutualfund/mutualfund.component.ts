@@ -38,7 +38,7 @@ notValid: boolean = false;
       const myid = +params['id']
       this.mfService.getMF(myid).subscribe(payload=>{
         this.mutualFund = payload;
-        console.log(payload);
+        // console.log(payload);
       })
       
     })
@@ -63,7 +63,7 @@ notValid: boolean = false;
     }
   }
     submit(event: any, mfName:any, id:number){
-      console.log('this is event',event, 'this is name',mfName)
+      // console.log('this is event',event, 'this is name',mfName)
       if (mfName == "" || mfName == null){
         this.notValid = true;
       }else {
@@ -71,17 +71,13 @@ notValid: boolean = false;
         let cds = this.mfForm.value.cods;
         let stocks = this.mfForm.value.stks;
         let fund_name = mfName.toUpperCase()
-        console.log('this is the name',fund_name)
-        console.log('this is the forms value',this.mfForm.value);
-        console.log('this is the cds', cds);
-        console.log('this is the stoks', stocks)
         let daForm = {
           fund_name: fund_name,
           stocks: stocks,
           cds: cds
         }
         this.mfService.editMF(id, daForm).subscribe(payload =>{
-         console.log('the payload is', payload); 
+          
          this.ngOnInit();
         })
        
